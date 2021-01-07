@@ -8,15 +8,15 @@ import { Persona } from '../persona.model';
 })
 export class FormularioComponent implements OnInit {
   @Output() personaCreada = new EventEmitter<Persona>();
-  nombreInput:string;
-  apellidoInput:string;
+  //nombreInput:string;
+  //apellidoInput:string;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-   onAgregarPersona(){
-  	let persona1 = new Persona(this.nombreInput, this.apellidoInput);
+   onAgregarPersona(nombreInput:HTMLInputElement, apellidoInput:HTMLInputElement){
+  	let persona1 = new Persona(nombreInput.value, apellidoInput.value);
   	this.personaCreada.emit(persona1);
   }
 
