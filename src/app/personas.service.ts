@@ -1,7 +1,12 @@
-import {Persona} from './persona.model'
+import {Persona} from './persona.model';
+import {LoggingService} from './LoggingService.service';
+
+import {Injectable} from '@angular/core';
+
 
 /*Data services en angular*/
 //1.- Crea una clase PersonasService en tu app
+@Injectable()
 export class PersonasService{
 /*Data services en angular*/
 //2.- Copiamos y pegamos o creamos el arreglo personas 
@@ -16,8 +21,10 @@ personas: Persona[] = [
 
 //4.- ir a la clase app.component donde se ejecutara 
 //el servicio creado
+ constructor(private loggingService: LoggingService){}
 
 agregarPersona(persona:Persona){
+  this.loggingService.enviarMensajeAConsola("agregamos la persona" + persona.nombre);
    this.personas.push(persona);
 }
 
