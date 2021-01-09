@@ -27,7 +27,11 @@ export class FormularioComponent implements OnInit {
 
 //Se inyecta aca debido a que ahora es un servicio
   constructor(private loggingService:LoggingService,
-              private personasService: PersonasService ) {  }
+              private personasService: PersonasService, ) { 
+this.personasService.saludar.subscribe(
+    (indice: number) => alert("El indice es: " + indice)
+  )
+               }
 
   ngOnInit(): void {
   }

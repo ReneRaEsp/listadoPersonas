@@ -1,7 +1,7 @@
 import {Persona} from './persona.model';
 import {LoggingService} from './LoggingService.service';
 
-import {Injectable} from '@angular/core';
+import {Injectable, EventEmitter} from '@angular/core';
 
 
 /*Data services en angular*/
@@ -15,6 +15,8 @@ personas: Persona[] = [
 	new Persona("Juan","Perez"),
 	new Persona("Laura","Gomez")
 ];
+
+saludar = new EventEmitter<number>();
 //3.- Se copio desde la clase app.component.ts 
 //y se colocó entre comentarios porque ahora se 
 //realizara atraves de servicios
